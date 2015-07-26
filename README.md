@@ -1,4 +1,4 @@
-##Project 2
+#Project 2
 
 **Name to be Decided**
 
@@ -9,3 +9,12 @@
     - Ebay
 
 - This application will also be used to connect collectors together so that they can help each other and build up their networks.
+
+- It will be launched using Heroku
+
+##TECHNOLOGIES
+
+- HTML
+- CSS (Bootstrap)
+- Ruby on Rails (Postgresql DB)
+- Javascript & JQuery
