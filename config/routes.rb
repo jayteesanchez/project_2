@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'sessions/new'
-
   root 'shoes#index'
 
   get '/login', to: 'sessions#new'
@@ -10,4 +7,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :shoes
+  get '/shoes/new', to: 'user#show'
+
 end

@@ -9,6 +9,7 @@ class ShoesController < ApplicationController
 
   def create
     @shoe = Shoe.new(car_params)
+    @shoe[:user_id] = current_user.id
     if @shoe.save
       # current_user.cars << @car
       redirect_to "/shoes/#{@shoe.id}"
@@ -19,6 +20,7 @@ class ShoesController < ApplicationController
 
   def show
     @shoe = Shoe.find_by_id(params[:id])
+    @user = current_user.name
   end
 
   def edit
