@@ -1,0 +1,39 @@
+<h1>Edit your Profile</h1>
+
+<%= form_for @user do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %> <br>
+
+  <%= f.label :email %>:
+  <%= f.text_field :email %> <br>
+
+  <%= f.label :address_line_1 %>:
+  <%= f.text_field :address_line_1 %> <br>
+
+  <%= f.label :address_line_2 %>:
+  <%= f.text_field :address_line_2 %> <br>
+
+  <%= f.label :city %>:
+  <%= f.text_field :city %> <br>
+
+  <%= f.label :zip_code %>:
+  <%= f.number_field :zip_code %> <br>
+
+  <%= f.label :state %>:
+  <%= f.text_field :state %> <br>
+
+  <%= f.label :password %>
+  <%= f.select :password %> <br>
+
+  <%= f.label :password_confirmation %>
+  <%= f.select :password_confirmation %> <br>
+
+  <%= f.label :image %>
+  <%= f.text_field :image %> <br>
+
+  <%= f.submit %>
+<% end %>
+
+
+
+

@@ -1,0 +1,11 @@
+<a href="/shoes">Back to Shoes for Sale</a>
+
+<h1>For Sale</h1>
+
+Name: <%= @shoe.name %><br>
+Condition: <%= @shoe.condition %><br>
+Asking Price: <%= @shoe.asking_price %><br>
+<img src="<%= @shoe.image %>"><br>
+User Name <%= @shoe.user_id.name %><br>
+
+<%= link_to 'Edit Shoe', edit_shoe_path %>

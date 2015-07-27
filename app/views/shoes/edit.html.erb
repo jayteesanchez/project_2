@@ -1,0 +1,21 @@
+<h1>Edit your Shoe</h1>
+
+<%= form_for @shoe do |f| %>
+  <%= f.label :name %>:
+  <%= f.number_field :name %> <br>
+
+  <%= f.label :condition %>:
+  <%= f.text_field :condition %> <br>
+
+  <%= f.label :asking_price %>:
+  <%= f.text_field :asking_price %> <br>
+
+  <%= f.label :image %>:
+  <%= f.text_field :image %> <br>
+
+  <%= f.submit %>
+<% end %>
+
+
+
+

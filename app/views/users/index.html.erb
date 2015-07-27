@@ -1,0 +1,14 @@
+
+ <h1>Users</h1>
+<% @users.each do |user| %>
+  <p>
+    <%= user.name %><br>
+    <%= user.email %><br>
+    <img src=" <%= user.image %> "><br>
+<!--     <%= user.password_digest %>
+ -->
+  </p>
+<% end %>
+
+
+
