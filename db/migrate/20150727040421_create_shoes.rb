@@ -5,6 +5,7 @@ class CreateShoes < ActiveRecord::Migration
       t.string :condition
       t.integer :asking_price
       t.string :image
+      t.integer :user_id
 
       t.timestamps null: false
     end
