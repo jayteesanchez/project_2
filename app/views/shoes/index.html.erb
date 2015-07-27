@@ -7,10 +7,8 @@
     <div class='col-md-4'>
       <p>
       <h3><%= shoe.name %><br></h3>
-      <img src="<%= shoe.image %>" width="300" height="300"><br>
-      <h3>Condition:</h3><%= shoe.condition %><br>
+      <a href="/users/:user_id/shoes/<%= shoe.id %>"><img src="<%= shoe.image %>" width="220" height="220"></a>      <h3>Condition:</h3><%= shoe.condition %><br>
       <h3>Seller's Price:</h3><%= shoe.asking_price %><br>
-      <a href="/users/:user_id/shoes/<%= shoe.id %>">View Shoe</a>
       </p>
     </div>
 

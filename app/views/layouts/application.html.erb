@@ -6,15 +6,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
       <% flash.each do |name, message| %>
-      <div class="flash-message flash-message-<%= name %>">
-        <%= message %>
-      </div>
+        <div class="flash-message flash-message-<%= name %>">
+          <%= message %>
+        </div>
       <% end %>
       <% if current_user %>
-      <p> Hello, <%= current_user.name %> </p>
-      <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: "Are you sure?"} %><br>
+        <p> Hello, <%= current_user.name %> </p>
+        <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: "Are you sure?"} %><br>
       <% else %>
-      <%= link_to 'Please login', login_path %><br>
+        <%= link_to 'Please Login', login_path %> or <%= link_to 'Sign Up!', new_user_path %><br>
       <% end %>
 </head>
 <body>
