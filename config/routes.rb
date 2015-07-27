@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
   root 'shoes#index'
 
   get '/login', to: 'sessions#new'
