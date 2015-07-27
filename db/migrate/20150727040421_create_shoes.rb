@@ -1,10 +1,10 @@
 class CreateShoes < ActiveRecord::Migration
   def change
     create_table :shoes do |t|
-      t.string :index
-      t.string :new
-      t.string :edit
-      t.string :show
+      t.string :name
+      t.string :condition
+      t.integer :asking_price
+      t.string :image
 
       t.timestamps null: false
     end
