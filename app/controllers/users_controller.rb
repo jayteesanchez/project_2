@@ -9,7 +9,23 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+    @shoe = Shoe.find_by_id(params[:user_id])
+
   end
+
+  def edit
+    @user = User.find_by_id(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      redirect_to "/users/#{@user.id}"
+    else
+      render 'edit'
+    end
+  end
+
 
   def create
     @user = User.new(user_params)

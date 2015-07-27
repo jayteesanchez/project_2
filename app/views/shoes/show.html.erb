@@ -1,11 +1,12 @@
-<a href="/shoes">Back to Shoes for Sale</a>
 
 <h1>For Sale</h1>
 
 Name: <%= @shoe.name %><br>
+<img src="<%= @shoe.image %>" width="300" height="300"><br>
 Condition: <%= @shoe.condition %><br>
 Asking Price: <%= @shoe.asking_price %><br>
-<img src="<%= @shoe.image %>"><br>
 Seller: <%= @user %><br>
+<a href="/">Back to Shoes for Sale</a><Br>
+<%= link_to 'Edit Shoe', edit_user_shoe_path %><br>
+<%= link_to 'Destroy',  method: :delete, data: { confirm: 'Are you sure?' } %>
 
-<%= link_to 'Edit Shoe', edit_shoe_path %>

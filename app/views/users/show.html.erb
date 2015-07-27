@@ -1,5 +1,19 @@
-
-<img src='<%= @user.image %>'><br>
-<%= @user.name %><br>
-<%= @user.email %><br>
+<div class="jumbotron">
+  <h1><%= @user.name %></h1>
+  <h4>Contact: <%= @user.email %></h4>
+  <img src="<%= @user.image %>"width="300" height="300"><br><br>
+</div>
+<div class="row">
+<h3><%= @user.name %>'s Shoes For Sale</h3>
+<ul>
+<% @user.shoes.each do |shoe| %>
+  <div class='col-md-4'>
+    <a href="/users/:user_id/shoes/<%= shoe.id %>"><img src=" <%= shoe.image %> " width="300" height= "300"></a><br>
+    <%= shoe.name %><br>
+    <%= shoe.condition %><br>
+    <%= shoe.asking_price %><br>
+  </div>
+<% end %>
+</ul>
+</div>
 

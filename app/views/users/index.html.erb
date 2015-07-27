@@ -4,9 +4,9 @@
   <p>
     <%= user.name %><br>
     <%= user.email %><br>
-    <img src=" <%= user.image %> "><br>
-<!--     <%= user.password_digest %>
- -->
+    <br>
+    <a href="/users/<%= user.id %>"><img src=" <%= user.image %> " width="300" height="300"></a>
+
   </p>
 
 <% end %>

@@ -5,14 +5,16 @@ class ShoesController < ApplicationController
 
   def new
     @shoe = Shoe.new
+    @user = current_user
   end
 
   def create
-    @shoe = Shoe.new(car_params)
-    @shoe[:user_id] = current_user.id
+    @user = User.find(params[:id])
+    @shoe = Shoe.new(shoe_params)
+    @user.shoes << @shoe
     if @shoe.save
       # current_user.cars << @car
-      redirect_to "/shoes/#{@shoe.id}"
+      redirect_to "users/user_id/shoes/#{@shoe.id}"
     else
       render 'new'
     end
@@ -20,16 +22,17 @@ class ShoesController < ApplicationController
 
   def show
     @shoe = Shoe.find_by_id(params[:id])
-    @user = current_user.name
+    @user = User.find_by_id(params[:id])
   end
 
   def edit
     @shoe = Shoe.find(params[:id])
+    @user = Shoe.find(params[:user_id])
   end
 
   def update
     @shoe = Shoe.find(params[:id])
-    if @shoe.update_attributes(car_params)
+    if @shoe.update_attributes(shoe_params)
       redirect_to "/shoes/#{@shoe.id}"
     else
       render 'edit'
@@ -39,13 +42,13 @@ class ShoesController < ApplicationController
   def destroy
      @shoe = Shoe.find(params[:id])
      if @shoe.delete
-      redirect_to show_path
+      redirect_to root_path
     end
  end
 
   private
 
-  def car_params
+  def shoe_params
     params.require(:shoe).permit(:name, :condition, :asking_price, :image)
   end
 
