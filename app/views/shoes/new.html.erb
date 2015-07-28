@@ -2,7 +2,7 @@
 
 <h1>Sell your Shoes</h1>
 
-<%= form_for ([@user, @shoe]) do |f| %>
+<%= bootstrap_form_for (@users, @shoe) do |f| %>
   <%= f.label :name %>:
   <%= f.text_field :name %> <br>
 

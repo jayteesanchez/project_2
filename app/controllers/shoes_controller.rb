@@ -1,5 +1,5 @@
 class ShoesController < ApplicationController
-  # before_action :authenticate, :authorize
+  before_action :authenticate, :authorize
 
   def index
     @shoes = Shoe.all
@@ -49,23 +49,23 @@ class ShoesController < ApplicationController
 
 private
 
-  # def authenticate
-  #   unless logged_in?
-  #     flash.now.alert =
-  #       "You must be logged in to access this section of the site."
-  #     redirect_to login_path
-  #   end
-  # end
+  def authenticate
+    unless logged_in?
+      flash.now.alert =
+        "You must be logged in to access this section of the site."
+      redirect_to login_path
+    end
+  end
 
-  # def authorize
-  #   @user = User.find(params[:user_id])
+  def authorize
+    @user = User.find_by_id(params[:id])
 
-  #   unless current_user.user == @user
-  #     flash.now.alert =
-  #       "You are not authorized to edit this Shoe's information."
-  #     redirect_to login_path
-  #   end
-  # end
+    unless current_user.user == @user
+      flash.now.alert =
+        "You are not authorized to edit this Shoe's information."
+      redirect_to login_path
+    end
+  end
 
   def shoe_params
     params.require(:shoe).permit(:name, :condition, :asking_price, :image, :user_id)

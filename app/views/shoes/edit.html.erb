@@ -1,6 +1,6 @@
 <h1>Edit your Shoe</h1>
 
-<%= form_for ([@user, @shoe]) do |f| %>
+<%= bootstrap_form_for ([@user, @shoe]) do |f| %>
   <%= f.label :name %>:
   <%= f.text_field :name %> <br>
 
