@@ -1,11 +1,10 @@
 
- <h1>Users</h1>
+ <h1 class="bg-primary">Users</h1>
 <% @users.each do |user| %>
   <p>
-    <%= user.name %><br>
-    <%= user.email %><br>
-    <br>
-    <a href="/users/<%= user.id %>"><img src=" <%= user.image %> " width="220" height="220"></a>
+    <h3 class="bg-primary"><%= user.name %><br></h3>
+    <h4><%= user.email %><br></h4>
+    <a href="/users/<%= user.id %>"><img src=" <%= user.image %> " class="img-rounded"  width="220" height="220"></a>
 
   </p>
 

@@ -60,10 +60,10 @@ private
   def authorize
     @user = User.find_by_id(params[:id])
 
-    unless current_user.user == @user
+    unless current_user != @user
       flash.now.alert =
         "You are not authorized to edit this Shoe's information."
-      redirect_to login_path
+      redirect_to user_shoes_path(current_user)
     end
   end
 

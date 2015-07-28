@@ -5,20 +5,46 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-      <% flash.each do |name, message| %>
-        <div class="flash-message flash-message-<%= name %>">
-          <%= message %>
-        </div>
-      <% end %>
-      <% if current_user %>
-        <p> Hello, <%= current_user.name %> </p>
-        <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: "Are you sure?"} %><br>
-      <% else %>
-        Please <%= link_to 'Login', login_path %> or <%= link_to 'Sign Up!', new_user_path %><br>
-      <% end %>
 </head>
 <body>
 <div class="container">
+  <nav class="navbar navbar-inverse" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/"><p class="text-warning">RoundHouse Kicks</p></a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="/users/:user_id/shoes">SHOP</a></li>
+      <li><a href="/users">CONNECT</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>      <% flash.each do |name, message| %>
+        <div class="flash-message flash-message-<%= name %>">
+          <li><%= message %></li>
+        </div>
+      <% end %>
+      <% if current_user %>
+
+        <p class="text-warning">  Hello, <%= current_user.name %></p>
+        <li class="text-danger"><%= link_to 'Logout', logout_path, method: :delete, data: {confirm: "Are you sure?"} %></li>
+      <% else %>
+
+        <li><%= link_to 'Login', login_path %></li>
+
+        <li><%= link_to 'Sign Up!', new_user_path %></li>
+      <% end %>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
       <%= yield %>
 </div>
 </body>

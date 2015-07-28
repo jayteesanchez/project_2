@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-skip_before_action :require_login, only: [:new, :create]
+skip_before_action ([:authenticate, :authorize]), only: [:new, :show, :create, :update]
 
  def index
     @users = User.all
@@ -49,7 +49,7 @@ private
   def authorize
     @user = User.find(params[:user_id])
 
-    unless current_user.user == @user
+    unless current_user.user != @user
       flash.now.alert =
         "You are not authorized to edit this Shoe's information."
       redirect_to user_path(@user)

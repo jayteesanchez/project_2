@@ -1,13 +1,13 @@
 <div class="jumbotron">
-    <h1>For Sale</h1>
+    <h1><u class='change'>For Sale</u></h1>
 </div>
 <div class="row">
 <% @shoes.each do |shoe| %>
 
     <div class='col-md-4'>
       <p>
-      <h3><%= shoe.name %><br></h3>
-      <a href="/users/:user_id/shoes/<%= shoe.id %>"><img src="<%= shoe.image %>" width="220" height="220"></a>      <h3>Condition:</h3><%= shoe.condition %><br>
+      <h3 ><%= shoe.name %><br></h3>
+      <a href="/users/:user_id/shoes/<%= shoe.id %>"><img src="<%= shoe.image %>" class="img-rounded" width="220" height="220"></a>      <h3>Condition:</h3><%= shoe.condition %><br>
       <h3>Seller's Price:</h3><%= shoe.asking_price %><br>
       </p>
     </div>
