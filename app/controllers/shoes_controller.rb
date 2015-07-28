@@ -10,7 +10,6 @@ class ShoesController < ApplicationController
 
   def create
     shoe = Shoe.new(shoe_params)
-    shoe[:user_id] = user.id
     @user.shoes << shoe
     if shoe.save
       # current_user.cars << @car
@@ -68,6 +67,6 @@ private
   end
 
   def shoe_params
-    params.require(:shoe).permit(:name, :condition, :asking_price, :image, :user_id)
+    params.require(:shoe).permit(:name, :condition, :asking_price, :image)
   end
 end

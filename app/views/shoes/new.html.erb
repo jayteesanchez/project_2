@@ -1,18 +1,13 @@
 
 
 <h1>Sell your Shoes</h1>
-
-<%= bootstrap_form_for (@users, @shoe) do |f| %>
-  <%= f.label :name %>:
+  <%= bootstrap_form_for [:user, @shoe] do |f| %>
   <%= f.text_field :name %> <br>
 
-  <%= f.label :condition %>:
   <%= f.text_field :condition %> <br>
 
-  <%= f.label :asking_price %>:
   <%= f.text_field :asking_price %> <br>
 
-  <%= f.label :image %>:
   <%= f.text_field :image %> <br>
 
   <%= f.submit %>
