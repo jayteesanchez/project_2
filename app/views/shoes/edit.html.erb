@@ -1,6 +1,7 @@
-<h1>Edit your Shoe</h1>
-
-<%= bootstrap_form_for ([@user, @shoe]) do |f| %>
+<div class="jumbotron sIndex">
+ <h1><u class='change'>Edit your Shoe</h1>
+</div>
+<%= bootstrap_form_for [:user, @shoe] do |f| %>
   <%= f.label :name %>:
   <%= f.text_field :name %> <br>
 
@@ -16,6 +17,9 @@
   <%= f.submit %>
 <% end %>
 
+<div class="panel-footer bottom">
+  <p class="text-warning">Jaytee Sanchez</p>
+</div>
 
 
 

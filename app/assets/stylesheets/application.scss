@@ -20,12 +20,13 @@
 
 .jumbotron{
   background-image: url('http://i.imgur.com/E5nILXK.jpg');
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .row{
   background-color: lighten(#000, 99.9%);
-    border-radius: 10px;
+  border-radius: 5px;
+  padding: 0px;
 }
 
 .change{
@@ -35,4 +36,29 @@
 .homePage{
   height: 390px;
   background-size: cover;
+}
+
+.sIndex{
+  background-size: cover;
+}
+
+.sale{
+  text-align: center;
+}
+
+.bottom{
+  text-align: right;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  width: 103%;
+  margin-left: -15px;
+}
+
+body{
+  background-color: gray;
+}
+
+.nshoe{
+  background-image: url ('http://i.imgur.com/UeKehK0.jpg');
 }

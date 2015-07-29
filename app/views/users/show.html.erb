@@ -1,9 +1,16 @@
 <div class="jumbotron">
+
   <div class="row">
+  <ol>
   <h1><%= @user.name %></h1>
   <h4>Contact: <%= @user.email %></h4>
   <img src="<%= @user.image %>" class="img-rounded"width="220" height="220"><br><br>
-</div></p>
+
+  </ol>
+  <ol>
+   <%= button_to "SELL", new_user_shoe_path(@user, @shoe), method: :get %>
+ </ol>
+ </div></p>
 <div class="row">
 <h3><%= @user.name %>'s Shoes For Sale</h3>
 <ul>

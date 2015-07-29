@@ -1,12 +1,24 @@
+<div class="jumbotron sIndex">
+ <h1><u class='change'>For Sale</u></h1>
+</div>
+<div class="row">
 
-<h1>For Sale</h1>
-
-Name: <%= @shoe.name %><br>
+<div class='col-md-4 sale'>
+<h3 class="text-warning" ><%= @shoe.name %></h3><br>
 <img src="<%= @shoe.image %>" class="img-rounded" width="220" height="220"><br>
 Condition: <%= @shoe.condition %><br>
 Asking Price: <%= @shoe.asking_price %><br>
-Seller: <%= @user %><br>
+Seller: <%= @user.name %><br>
 <a href="/">Back to Shoes for Sale</a><Br>
-<%= link_to 'Edit Shoe', edit_user_shoe_path %><br>
-<%= link_to 'Destroy',  method: :delete, data: { confirm: 'Are you sure?' } %>
+<a class="btn btn-default" href="/users/:user_id/shoes/:id" role="button">EDIT SHOE</a>
+<%=link_to 'Edit Shoe', edit_user_shoe_path(@user, @shoe), class:'btn btn-primary' %>
+<%= button_to "BUY", user_shoe_path(@user, @shoe), method: :delete, data: {confirm: "Are you sure?"} %>
+</div>
+ <div class='col-md-6 sale ebay'>
+<h3 class="text-warning" >Something Similar</h3><br>
+
+</div>
+
+
+</body>
 

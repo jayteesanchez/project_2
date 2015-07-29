@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-skip_before_action ([:authenticate, :authorize]), only: [:new, :show, :create, :update]
+  skip_before_action :authenticate, :except => [:new, :create]
 
  def index
     @users = User.all
@@ -10,16 +10,16 @@ skip_before_action ([:authenticate, :authorize]), only: [:new, :show, :create, :
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by_id(params[:id])
 
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find_by_id(params[:id])
+
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       redirect_to user_path(@user)
     else
@@ -43,16 +43,6 @@ private
       flash.now.alert =
         "You must be logged in to access this section of the site."
       redirect_to login_path
-    end
-  end
-
-  def authorize
-    @user = User.find(params[:user_id])
-
-    unless current_user.user != @user
-      flash.now.alert =
-        "You are not authorized to edit this Shoe's information."
-      redirect_to user_path(@user)
     end
   end
 

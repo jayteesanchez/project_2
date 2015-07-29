@@ -1,5 +1,6 @@
 class ShoesController < ApplicationController
-  before_action :authenticate, :authorize
+  before_action :authenticate
+  before_action :authorize
 
   def index
     @shoes = Shoe.all
@@ -10,10 +11,9 @@ class ShoesController < ApplicationController
 
   def create
     shoe = Shoe.new(shoe_params)
-    @user.shoes << shoe
     if shoe.save
-      # current_user.cars << @car
-      redirect_to user_path(@user), notice: "New Shoe Added!"
+      current_user.shoes << shoe
+      redirect_to current_user, notice: "New Shoe Added!"
     else
       render 'new'
     end
@@ -21,13 +21,18 @@ class ShoesController < ApplicationController
 
   def show
     @shoe = Shoe.find(params[:id])
+    @user = current_user
+
   end
 
   def edit
-    @shoe = Shoe.find(params[:id])
+    @shoe = Shoe.find_by_id(params[:id])
+    @user = User.find_by_id(params[:id])
+
   end
 
   def update
+    @user = User.find_by_id(params[:id])
     @shoe = Shoe.find(params[:id])
     if @shoe.update_attributes(shoe_params)
       redirect_to "/shoes/#{@shoe.id}"
@@ -59,10 +64,10 @@ private
   def authorize
     @user = User.find_by_id(params[:id])
 
-    unless current_user != @user
+    unless current_user != @shoe
       flash.now.alert =
         "You are not authorized to edit this Shoe's information."
-      redirect_to user_shoes_path(current_user)
+      redirect_to user_path(@user)
     end
   end
 
