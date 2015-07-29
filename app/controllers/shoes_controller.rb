@@ -26,7 +26,7 @@ class ShoesController < ApplicationController
   end
 
   def edit
-    @shoe = Shoe.find_by_id(params[:user_id])
+    @shoe = Shoe.find_by_id(params[:id])
     @user = User.find_by_id(params[:id])
 
   end

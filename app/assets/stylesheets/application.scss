@@ -41,6 +41,7 @@
 
 .sIndex{
   background-size: cover;
+  height: 130px;
 }
 
 .sale{
@@ -70,7 +71,7 @@ body{
 }
 
 .seller{
-  padding-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 button{
@@ -80,8 +81,14 @@ button{
 
 .uShow{
   background-image: url('http://i.imgur.com/UeKehK0.jpg');
+  height: 800px;
 }
 
 .uRow{
-  opacity: 0.6;
+  opacity: 0.8;
+}
+
+.signUp{
+  height: 1000px;
+  color: white;
 }
