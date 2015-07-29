@@ -21,6 +21,7 @@
 .jumbotron{
   background-image: url('http://i.imgur.com/E5nILXK.jpg');
   border-radius: 5px;
+  background-size: cover;
 }
 
 .row{
@@ -61,4 +62,26 @@ body{
 
 .nshoe{
   background-image: url ('http://i.imgur.com/UeKehK0.jpg');
+}
+
+.white{
+  background-color: white;
+  background-image: none;
+}
+
+.seller{
+  padding-bottom: 15px;
+}
+
+button{
+  border-radius:5px;
+  padding: 0px;
+}
+
+.uShow{
+  background-image: url('http://i.imgur.com/UeKehK0.jpg');
+}
+
+.uRow{
+  opacity: 0.6;
 }

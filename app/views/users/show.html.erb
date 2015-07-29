@@ -1,6 +1,6 @@
-<div class="jumbotron">
+<div class="jumbotron uShow">
 
-  <div class="row">
+  <div class="row uRow">
   <ol>
   <h1><%= @user.name %></h1>
   <h4>Contact: <%= @user.email %></h4>
@@ -8,15 +8,17 @@
 
   </ol>
   <ol>
-   <%= button_to "SELL", new_user_shoe_path(@user, @shoe), method: :get %>
+   <%= link_to "SELL SOME SHOES", new_user_shoe_path(@user, @shoe), method: :get, class:"btn btn-warning" %>
+   <%= link_to "EDIT INFO", edit_user_path(@user), method: :get, class:"btn btn-info" %>
+
  </ol>
  </div></p>
-<div class="row">
+<div class="row uRow">
 <h3><%= @user.name %>'s Shoes For Sale</h3>
 <ul>
 <% @user.shoes.each do |shoe| %>
   <div class='col-md-4'>
-    <a href="/users/:user_id/shoes/<%= shoe.id %>"><img src="<%= shoe.image %>" class="img-rounded" width="220" height= "220"></a><br>
+    <button class='btn btn-default btn-lg btn-block'><a href="/users/:user_id/shoes/<%= shoe.id %>"><img src="<%= shoe.image %>" class="img-rounded" width="220" height= "220"></a></button><br>
     <%= shoe.name %><br>
     <%= shoe.condition %><br>
     <%= shoe.asking_price %><br>
