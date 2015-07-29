@@ -28,6 +28,9 @@ class ShoesController < ApplicationController
   def edit
     @shoe = Shoe.find_by_id(params[:id])
     @user = User.find_by_id(params[:id])
+    unless current_user.id == @shoe.user_id
+      flash.now.alert ="You can't edit Shoes that aren't yours"
+    end
 
   end
 

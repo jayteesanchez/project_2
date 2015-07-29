@@ -32,7 +32,7 @@
         </div>
       <% end %>
       <% if current_user %>
-        <p class="text-warning">  Hello, <a href="/users"><%= current_user.name %></a></p>
+        <li class="text-warning"> <a href="/users/<% current_user.id %>"> <p class="text-warning">Hello, <%= current_user.name %></p></a></li>
         <li class="text-danger"><%= link_to 'Logout', logout_path, method: :delete, data: {confirm: "Are you sure?"} %></li>
       <% else %>
 

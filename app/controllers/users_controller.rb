@@ -16,7 +16,11 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find_by_id(params[:id])
-
+    unless current_user == @user
+       flash.now.alert =
+        "You can't edit someone else's profile!"
+      redirect_to user_path
+    end
   end
 
   def update

@@ -1,4 +1,5 @@
 <div class="jumbotron sIndex">
+
 </div>
 <div class="row Seller">
 
@@ -10,7 +11,9 @@
     Seller: <%= @user.name %><br>
     <a href="/">Back to Shoes for Sale</a><Br>
     <%=link_to 'Edit Shoe', edit_user_shoe_path(@user, @shoe), class:'btn btn-primary' %>
-    <%= link_to 'BUY', user_shoe_path(@user, @shoe), method: :delete, data: {confirm: "Are you sure?"}, class:'btn btn-success' %><br>
+    <%= link_to 'BUY', user_shoe_path(@user, @shoe), method: :delete, data: {confirm: "Are you sure?"}, class:'btn btn-success' %>
+    <br><br>
+
   </div>
 
   <div class='col-md-6 sale ebay'>
