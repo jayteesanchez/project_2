@@ -26,17 +26,24 @@
       <li><a href="/users">CONNECT</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li>      <% flash.each do |name, message| %>
+      <li>
+        <% flash.each do |name, message| %>
         <div class="flash-message flash-message-<%= name %>">
           <li><%= message %></li>
         </div>
-      <% end %>
-      <% if current_user %>
-        <li class="text-warning"> <a href="/users/<% current_user.id %>"> <p class="text-warning">Hello, <%= current_user.name %></p></a></li>
-        <li class="text-danger"><%= link_to 'Logout', logout_path, method: :delete, data: {confirm: "Are you sure?"} %></li>
+        <% end %>
+      </li>
+        <% if current_user %>
+        <li class="text-warning">
+          <a href="/users/<% current_user.id %>"> <p class="text-warning">Hello, <%= current_user.name %></p></a>
+        </li>
+        <li class="text-danger">
+          <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: "Are you sure?"} %>
+        </li>
       <% else %>
-
-        <li><%= link_to 'Sign Up!', new_user_path %></li>
+        <li>
+          <%= link_to 'Sign Up!', new_user_path %>
+        </li>
       <% end %>
     </ul>
   </div><!-- /.navbar-collapse -->
