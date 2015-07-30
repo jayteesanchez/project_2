@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate, :except => [:new, :create]
+  skip_before_action [:authenticate], :except => [:new, :create]
 
  def index
     @users = User.all
@@ -24,8 +24,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(user_params)
-      redirect_to user_path(@user)
+    if current_user.update_attributes(user_params)
+      redirect_to user_path(current_user)
     else
       render 'edit'
     end

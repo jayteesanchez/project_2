@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20150727040421) do
 
   create_table "shoes", force: :cascade do |t|
     t.string   "name"
+    t.integer  "size"
     t.string   "condition"
     t.integer  "asking_price"
     t.string   "image"
