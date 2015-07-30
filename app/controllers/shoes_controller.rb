@@ -22,8 +22,8 @@ class ShoesController < ApplicationController
   def show
     @shoe = Shoe.find(params[:id])
     @user = current_user
-    @shoes = HTTParty.get("http://open.api.ebay.com/shopping?callname=FindPopularItems&appid=JayteeSa-3433-4a58-83be-4f7587f2eae9&version=517&siteid=0&QueryKeywords=Jordan7&responseencoding=JSON")
-
+    @initial = HTTParty.get("http://open.api.ebay.com/shopping?callname=FindPopularItems&appid=JayteeSa-3433-4a58-83be-4f7587f2eae9&version=517&siteid=0&QueryKeywords=Jordan7GMP&responseencoding=JSON")
+    @shoes = @initial
   end
 
   def edit
