@@ -16,6 +16,6 @@ User.create(
   zip_code: 90242,
   state: "CA",
   password: "a",
-  password_confirmation: "a"
-  image: "https://avatars1.githubusercontent.com/u/12928206?v=3&s=460",
+  password_confirmation: "a",
+  image: "https://avatars1.githubusercontent.com/u/12928206?v=3&s=460"
   )
