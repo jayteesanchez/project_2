@@ -8,7 +8,7 @@
     <img src="<%= @shoe.image %>" class="img-rounded" width="220" height="220"><br>
     Size: <%= @shoe.size %><br>
     Condition: <%= @shoe.condition %><br>
-    Asking Price: <%= @shoe.asking_price %><br>
+    Asking Price: $ <%= @shoe.asking_price %><br>
     Seller: <%= @shoe.user.name %><br>
     <a href="/">Back to Shoes for Sale</a><Br>
     <%=link_to 'Edit Shoe', edit_user_shoe_path(@user, @shoe), class:'btn btn-primary' %>

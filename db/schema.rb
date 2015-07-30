@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 20150727040421) do
 
   create_table "shoes", force: :cascade do |t|
     t.string   "name"
-    t.integer  "size"
+    t.string   "size"
     t.string   "condition"
-    t.integer  "asking_price"
+    t.string   "asking_price"
     t.string   "image"
     t.integer  "user_id"
     t.datetime "created_at",   null: false
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20150727040421) do
     t.string   "address_line_1"
     t.string   "address_line_2"
     t.string   "city"
-    t.integer  "zip_code"
+    t.string   "zip_code"
     t.string   "state"
     t.string   "password_digest"
     t.string   "image"

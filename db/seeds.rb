@@ -5,16 +5,58 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
 User.create(
   id: 1,
+  name: "Ignacio",
+  email: "iggy@gmail.com",
+  address_line_1: "",
+  address_line_2: "",
+  city: "",
+  zip_code: "90242",
+  state: "CA",
+  password: "a",
+  password_confirmation: "a",
+  image: "http://i.imgur.com/OVI1P9U.jpg"
+  )
+
+User.create(
+  id: 2,
   name: "Jaytee",
   email: "jaytee.sanchez@gmail.com",
   address_line_1: "10000 Imperial Hwy Apt E207",
-  address_line_2:,
+  address_line_2: "",
   city: "Downey",
-  zip_code: 90242,
+  zip_code: "90242",
   state: "CA",
+  password: "a",
+  password_confirmation: "a",
+  image: "https://avatars1.githubusercontent.com/u/12928206?v=3&s=460"
+  )
+
+
+User.create(
+  id: 3,
+  name: "Phil",
+  email: "phil@gmail.com",
+  address_line_1: "",
+  address_line_2: "",
+  city: "",
+  zip_code: "90210",
+  state: "",
+  password: "a",
+  password_confirmation: "a",
+  image: "https://avatars1.githubusercontent.com/u/12928206?v=3&s=460"
+  )
+
+User.create(
+  id: 4,
+  name: "Will",
+  email: "will@gmail.com",
+  address_line_1: "",
+  address_line_2: "",
+  city: "",
+  zip_code: "90210",
+  state: "",
   password: "a",
   password_confirmation: "a",
   image: "https://avatars1.githubusercontent.com/u/12928206?v=3&s=460"

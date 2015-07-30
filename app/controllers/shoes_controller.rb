@@ -76,6 +76,6 @@ private
   end
 
   def shoe_params
-    params.require(:shoe).permit(:name, :condition, :asking_price, :image)
+    params.require(:shoe).permit(:name, :size, :condition, :asking_price, :image)
   end
 end
