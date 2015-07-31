@@ -8,6 +8,7 @@ gem 'rails', '4.2.3'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# Awesome Bootstrap Gems for Overall and Form Styling
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
 # Use Uglifier as compressor for JavaScript assets
@@ -16,7 +17,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
+# Used to Hide API Key
 gem 'figaro'
+# Used for API Request
 gem 'httparty'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -27,6 +31,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# For Authorization
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
@@ -49,7 +54,7 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
+# For Heroku Deployment
 group :production do
 
         gem 'rails_12factor'

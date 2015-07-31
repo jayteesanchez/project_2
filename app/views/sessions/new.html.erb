@@ -4,24 +4,17 @@
 <div class="row">
 
     <div class='col-md-4'>
-      <h3>About Us</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h3><u>About Us</u></h3>
+      <br>
+      <p>We're just a bunch of people that love to wear and collect shoes. We stand in line for releases, get raffle tickets and pay too much over retail for shoes we really need to have. The community is getting bigger and so are the prices so we've created this site to help get people to work together to beat the system!</p>
     </div>
 
     <div class='col-md-4'>
+      <!-- Changes column depending on if User is Logged in or not -->
     <% if current_user %>
-      <h3>Community</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h3><u>Community</u></h3>
+      <br>
+      <p>We all constantly lose to Bots buying shoes within the miliseconds of the release. Why should someone who wants to wear and use the shoe not get a chance because another person wants to make a quick buck selling multiple pairs? Coming together is the only way around it and that's why everyone's contact info is available so that we can help each other. Welcome to the Community! Lets have fun and collect together!!</p>
     <% else %>
        <h1>Login</h1>
       <%= bootstrap_form_tag url: '/sessions' do |f| %>
@@ -34,13 +27,9 @@
     </div>
 
    <div class='col-md-4'>
-      <h3>Why Join</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h3><u>Why Join</u></h3>
+      <br>
+      <p>Why not? The best shoes will be hosted here from real collectors and people not trying to make fast cash but instead help each other build on their collections. Our shoes are 100% authentic and you will be able to see what the market value is before purchasing to compare it to.</p>
     </div>
 
 </div>

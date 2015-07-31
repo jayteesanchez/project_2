@@ -1,35 +1,36 @@
 <div class="jumbotron uShow">
 
   <div class="row uRow">
-  <ol>
-  <h1><%= @user.name %></h1>
-  <h4>Contact: <%= @user.email %></h4>
-  <img src="<%= @user.image %>" class="img-rounded"width="220" height="220"><br><br>
-
-  </ol>
-  <ol>
-  <% if current_user %>
-   <%= link_to "SELL SOME SHOES", new_user_shoe_path(@user, @shoe), method: :get, class:"btn btn-warning" %>
-   <%= link_to "EDIT INFO", edit_user_path(@user), method: :get, class:"btn btn-info" %>
-  <% end %>
- </ol>
- </div></p>
-<div class="row uRow">
-<h3><%= @user.name %>'s Shoes For Sale</h3>
-<ul>
-<% @user.shoes.each do |shoe| %>
-  <div class='col-md-4'>
-    <button><a href="/users/:user_id/shoes/<%= shoe.id %>"><img src="<%= shoe.image %>" class="img-rounded" width="220" height= "220"></a></button><br>
-    <%= shoe.name %><br>
-    <%= shoe.size %><br>
-    <%= shoe.condition %><br>
-    $ <%= shoe.asking_price %><br>
+    <ol>
+      <h1><%= @user.name %></h1>
+      <h4>Contact: <%= @user.email %></h4>
+      <img src="<%= @user.image %>" class="img-rounded"width="220" height="220"><br><br>
+    </ol>
+    <ol>
+    <!-- Hides Edit and Sell Buttons if not logged in -->
+      <% unless !current_user %>
+       <%= link_to "SELL SHOES", new_user_shoe_path(@user, @shoe), method: :get, class:"btn btn-warning" %>
+       <%= link_to "EDIT INFO", edit_user_path(@user), method: :get, class:"btn btn-info" %><br>
+      <% end %>
+   </ol>
   </div>
-<% end %>
-</ul>
-</div>
+  <br>
+  <div class="row uRow">
+    <h3><%= @user.name %>'s Shoes For Sale</h3>
+    <ul>
+    <% @user.shoes.each do |shoe| %>
+    <div class='col-md-4'>
+      <button><a href="/users/:user_id/shoes/<%= shoe.id %>"><img src="<%= shoe.image %>" class="img-rounded" width="220" height= "220"></a></button><br>
+      <%= shoe.name %><br>
+      <%= shoe.size %><br>
+      <%= shoe.condition %><br>
+      $ <%= shoe.asking_price %><br>
+    </div>
+    <% end %>
+    </ul>
+  </div>
 </div>
 
 <div class="panel-footer bottom">
-<a href="https://github.com/jayteesanchez/project_2"><p class="text-warning">&copy; Jaytee Sanchez</p></a>
- </div>
+  <a href="https://github.com/jayteesanchez/project_2"><p class="text-warning">&copy; Jaytee Sanchez</p></a>
+</div>

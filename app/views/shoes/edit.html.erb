@@ -1,17 +1,19 @@
-<div class="jumbotron sIndex">
- <h1><u class='change'>Edit your Shoe</h1>
+<div class="jumbotron uIndex">
+  <!-- Shoe Editing Page -->
+ <h1><u class='change'>Edit your Shoe</h1></u>
 </div>
-  <%= bootstrap_form_for [:user, @shoe] do |f| %>
-  <%= f.text_field :name %> <br>
-  <%= f.text_field :size %> <br>
-   <%= f.select :condition, [['DS','DS'],['PADS','PADS'],['VNDS','VNDS'],['GOOD','GOOD'], ['BEATERS', 'BEATERS']] %><br>
-  $ <%= f.text_field :asking_price %> <br>
-  <%= f.text_field :image %> <br>
-  <%= f.submit %>
-<% end %>
-
+<div>
+  <%= bootstrap_form_for [current_user, @shoe] method: :patch do |f| %>
+    <%= f.text_field :name %> <br>
+    <%= f.text_field :size %> <br>
+     <%= f.select :condition, [['DS','DS'],['PADS','PADS'],['VNDS','VNDS'],['GOOD','GOOD'], ['BEATERS', 'BEATERS']] %><br>
+    $ <%= f.text_field :asking_price %> <br>
+    <%= f.text_field :image %> <br>
+    <%= f.submit %>
+  <% end %>
+</div>
 <div class="panel-footer bottom">
-<a href="https://github.com/jayteesanchez/project_2"><p class="text-warning">&copy; Jaytee Sanchez</p></a>
+  <a href="https://github.com/jayteesanchez/project_2"><p class="text-warning">&copy; Jaytee Sanchez</p></a>
  </div>
 
 

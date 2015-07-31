@@ -4,20 +4,15 @@
 <div class='.col-md-6 .col-md-offset-3 nshoe'>
   <%= bootstrap_form_for [:user, @shoe] do |f| %>
   <%= f.text_field :name %> <br>
-
   <%= f.text_field :size %> <br>
-
   <%= f.select :condition, [['DS','DS'],['PADS','PADS'],['VNDS','VNDS'],['GOOD','GOOD'], ['BEATERS', 'BEATERS']] %><br>
-
   <%= f.text_field :asking_price %> <br>
-
   <%= f.text_field :image %> <br>
-
   <%= f.submit class:'btn btn-success' %>
 <% end %>
 </div>
 <br>
 <div class="panel-footer bottom">
-<a href="https://github.com/jayteesanchez/project_2"><p class="text-warning">&copy; Jaytee Sanchez</p></a>
- </div>
+  <a href="https://github.com/jayteesanchez/project_2"><p class="text-warning">&copy; Jaytee Sanchez</p></a>
+</div>
 

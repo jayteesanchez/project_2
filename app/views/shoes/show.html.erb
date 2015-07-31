@@ -1,11 +1,11 @@
-<div class="jumbotron sIndex">
+<div class="jumbotron sIndex"></div>
 
-</div>
 <div class="row Seller">
 
   <div class='col-md-4 sale'>
     <h3 class='text-warning' ><%= @shoe.name %></h3><br>
-    <img src="<%= @shoe.image %>" class="img-rounded" width="220" height="220"><br>
+<!-- Pulling the image and assigning a default size for organization -->
+    <img src="<%= @shoe.image %>" class="img-rounded" width="250" height="220"><br>
     Size: <%= @shoe.size %><br>
     Condition: <%= @shoe.condition %><br>
     Asking Price: $ <%= @shoe.asking_price %><br>
@@ -14,20 +14,16 @@
     <%=link_to 'Edit Shoe', edit_user_shoe_path(@user, @shoe), class:'btn btn-primary' %>
     <%= link_to 'BUY', user_shoe_path(@user, @shoe), method: :delete, data: {confirm: "Are you sure?"}, class:'btn btn-success' %>
     <br><br>
-
   </div>
 
   <div class='col-md-6 sale ebay'>
     <h3 class="text-warning" >Something Similar</h3><br>
-      <%= @shoes %>
-  </div>
+    <p>EBAY API COMING...</p>
+
+   </div>
 </div>
 <br>
 <div class="panel-footer bottom">
-<a href="https://github.com/jayteesanchez/project_2"><p class="text-warning">&copy; Jaytee Sanchez</p></a>
+  <a href="https://github.com/jayteesanchez/project_2"><p class="text-warning">&copy; Jaytee Sanchez</p></a>
  </div>
 
-<script type="text/javascript">
-
-
-</script>

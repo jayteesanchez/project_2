@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project2</title>
+  <title>RoundHouse Kicks</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 </head>
 <body>
+  <!-- Bootstrap Styling for the Nav Bar and setting the Container Div accross all pages -->
 <div class="container">
   <nav class="navbar navbar-inverse" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
@@ -22,8 +23,14 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
+      <% if current_user %>
       <li><a href="/users/:user_id/shoes">SHOP</a></li>
       <li><a href="/users">CONNECT</a></li>
+      <li><%= link_to "SELL", new_user_shoe_path(current_user, @shoe), method: :get %></li>
+      <% else %>
+      <li><a href="/users">Who's already Signed up?</a></li>
+      <% end %>
+
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>
@@ -33,6 +40,7 @@
         </div>
         <% end %>
       </li>
+      <!-- If else statement that will change the links in the Nav Bar depending on if the user is logged in or not -->
         <% if current_user %>
         <li class="text-warning">
           <a href="/users/<% current_user.id %>"> <p class="text-warning">Hello, <%= current_user.name %></p></a>
@@ -41,8 +49,8 @@
           <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: "Are you sure?"} %>
         </li>
       <% else %>
-        <li>
-          <%= link_to 'Sign Up!', new_user_path %>
+        <li class="text-warning">
+          <a href="/users/new"> <p class="text-warning">Sign Up!</p></a>
         </li>
       <% end %>
     </ul>
@@ -51,7 +59,7 @@
       <%= yield %>
 </div>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
+<!-- My attempt to use the Ebay API (ICEBOX) -->
 </body>
 </html>
 

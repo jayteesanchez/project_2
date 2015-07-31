@@ -22,8 +22,8 @@ class ShoesController < ApplicationController
   def show
     @shoe = Shoe.find(params[:id])
     @user = current_user
-    @shoes = HTTParty.get("http://open.api.ebay.com/shopping?callname=FindPopularItems&appid=<%= ENV['EBAY_KEY']%>&version=517&siteid=0&QueryKeywords=Jordan7&responseencoding=JSON")
-
+    # @shoes = HTTParty.get("http://open.api.ebay.com/shopping?callname=FindPopularItems&appid=<%= ENV['EBAY_KEY']%>&version=517&siteid=0&QueryKeywords=Jordan7&responseencoding=JSON")
+# API attempt, ICEBOXED for Sprint 2
   end
 
   def edit
@@ -39,7 +39,7 @@ class ShoesController < ApplicationController
     @user = User.find_by_id(params[:id])
     @shoe = Shoe.find(params[:id])
     if @shoe.update_attributes(shoe_params)
-      redirect_to "/shoes/#{@shoe.id}"
+      redirect_to "/users/current_user/shoes"
     else
       render 'edit'
     end

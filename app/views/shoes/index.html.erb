@@ -1,22 +1,21 @@
 <div class="jumbotron">
-    <h1><u class='change'>For Sale</u></h1>
+  <h1><u class='change'>For Sale</u></h1>
 </div>
 <div class="row">
-<% @shoes.each do |shoe| %>
-
+  <!-- Shows all Shoes in the Shoe Table -->
+  <% @shoes.each do |shoe| %>
     <div class='col-md-4 sale'>
       <p>
       <h3 class="text-warning" ><%= shoe.name %><br></h3>
-      <button><a href="/users/:user_id/shoes/<%= shoe.id %>"><img src="<%= shoe.image %>" class="img-rounded" width="230" height="200"></a> </button>
+      <button><a href="/users/:user_id/shoes/<%= shoe.id %>"><img src="<%= shoe.image %>" class="img-rounded" width="250" height="220"></a> </button>
       <h3>Size:</h3><%= shoe.size %><br>
       <h3>Condition:</h3><%= shoe.condition %><br>
       <h3>Seller's Price:</h3><%= shoe.asking_price %><br>
       </p>
     </div>
-
-<% end %>
- </div>
+  <% end %>
+</div>
   <br>
 <div class="panel-footer bottom">
-<a href="https://github.com/jayteesanchez/project_2"><p class="text-warning">&copy; Jaytee Sanchez</p></a>
- </div>
+  <a href="https://github.com/jayteesanchez/project_2"><p class="text-warning">&copy; Jaytee Sanchez</p></a>
+</div>

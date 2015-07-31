@@ -32,32 +32,3 @@ User.create(
   password_confirmation: "a",
   image: "https://avatars1.githubusercontent.com/u/12928206?v=3&s=460"
   )
-
-
-User.create(
-  id: 3,
-  name: "Phil",
-  email: "phil@gmail.com",
-  address_line_1: "",
-  address_line_2: "",
-  city: "",
-  zip_code: "90210",
-  state: "",
-  password: "a",
-  password_confirmation: "a",
-  image: "https://avatars1.githubusercontent.com/u/12928206?v=3&s=460"
-  )
-
-User.create(
-  id: 4,
-  name: "Will",
-  email: "will@gmail.com",
-  address_line_1: "",
-  address_line_2: "",
-  city: "",
-  zip_code: "90210",
-  state: "",
-  password: "a",
-  password_confirmation: "a",
-  image: "https://avatars1.githubusercontent.com/u/12928206?v=3&s=460"
-  )

@@ -18,8 +18,11 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+
+
+// Additional Styling on top of Bootstrap styles
 .jumbotron{
-  background-image: url('http://i.imgur.com/E5nILXK.jpg');
+  background-image: url('https://i.imgur.com/E5nILXK.jpg');
   border-radius: 5px;
   background-size: cover;
 }
@@ -35,6 +38,10 @@
 
 .change{
   color: white;
+  background-color: black;
+  opacity: 0.75;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .homePage{
@@ -64,7 +71,7 @@ body{
 }
 
 .nshoe{
-  background-image: url ('http://i.imgur.com/UeKehK0.jpg');
+  background-image: url ('https://i.imgur.com/UeKehK0.jpg');
 }
 
 .white{
@@ -82,7 +89,7 @@ button{
 }
 
 .uShow{
-  background-image: url('http://i.imgur.com/UeKehK0.jpg');
+  background-image: url('https://i.imgur.com/UeKehK0.jpg');
   height: 800px;
 }
 

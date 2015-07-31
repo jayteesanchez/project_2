@@ -41,6 +41,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+     user = current_user
+     if user.destroy
+      session[:user_id] = nil
+      redirect_to root_path, notice: "Fine Leave!"
+     else
+      flash.now.alert ="You can Never Leave."
+      redirect_to root_path
+    end
+ end
+
 private
   def authenticate
     unless logged_in?
